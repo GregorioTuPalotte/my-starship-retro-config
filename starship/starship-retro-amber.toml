@@ -1,5 +1,6 @@
+
 format = """
-[┌─](#996A1D)$directory$git_branch$git_status
+[┌─](#996A1D)$directory$git_branch$git_status$python$cmd_duration$status
 [└─](#996A1D)$character"""
 
 add_newline = true
@@ -19,7 +20,26 @@ format = "[$symbol$branch]($style) "
 style = "#FFB000"
 format = "[$all_status$ahead_behind]($style) "
 
+[python]
+symbol = "py:"
+style = "#CC8800"
+format = "[$symbol$version(\\($virtualenv\\))]($style) "
+
+[cmd_duration]
+min_time = 2000
+show_milliseconds = false
+style = "#CC8800"
+format = "[took $duration]($style) "
+
+[status]
+disabled = false
+symbol = "× "
+success_symbol = ""
+style = "#CC8800"
+format = "[$symbol$common_meaning$signal_name$maybe_int]($style) "
+
 [character]
 success_symbol = "[>](bold #FFB000)"
 error_symbol = "[>](bold #CC8800)"
 vimcmd_symbol = "[<](bold #FFB000)"
+
