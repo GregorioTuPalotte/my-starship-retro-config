@@ -1,0 +1,25 @@
+format = """
+[┌─](#996A1D)$directory$git_branch$git_status
+[└─](#996A1D)$character"""
+
+add_newline = true
+
+[directory]
+style = "bold #FFB000"
+format = "[$path]($style) "
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = "git:"
+style = "#CC8800"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "#FFB000"
+format = "[$all_status$ahead_behind]($style) "
+
+[character]
+success_symbol = "[>](bold #FFB000)"
+error_symbol = "[>](bold #CC8800)"
+vimcmd_symbol = "[<](bold #FFB000)"
